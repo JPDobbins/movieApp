@@ -1,0 +1,29 @@
+<!-- 
+
+  UI defined for the movies page using HTML 
+
+  ion list item:
+      - brackets and async 'pipe' indicate that the element 
+        should wait for the 'observable' type object, then async 
+        will trigger to updated the UI
+ -->
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>My Movie Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-content padding>
+
+    <ion-list>
+      <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'movies', 'item.imdbID']">
+        {{ item.Title }}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+
+</ion-content>
