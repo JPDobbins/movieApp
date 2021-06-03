@@ -1,10 +1,10 @@
 # Example movie app using ionic 
 
-### file structure:
+### File structure:
     - src
         - app: store majority of functionality here
             - home: standard home folder for home screen (deleted for this example)
-            - pages: files pertaining to a given page, it's styling, routing declarations, test, and back end functionality 
+            - pages: files pertaining to a given page, it's styling, routing declarations, test, and script functionality
             - services: files similar to controllers, defines alot of back end functionality 
         - assets: store images etc
         - environments: define dev ops environments e.g. production and development 
@@ -19,7 +19,7 @@
     - app-routing.module.ts
         - declare routes 
 
-### commands:
+### Commands:
     - ionic g page pages/movies 
         - create a page folder called movies, within the pages directory 
     - ionic g page pages/movieDetails 

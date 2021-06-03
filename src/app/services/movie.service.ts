@@ -33,10 +33,18 @@ export class MovieService {
 
   // custom class function name, input parameters, returned object<type>, function code
   searchData(title: string, type: SearchType): Observable<any> {
-      return this.http.get(`${this.url}?s=${encodeURI(title)}&type=${type}&apikey=${this.apiKey}`)
+      var result;
+      console.log('searcData triggered');
+      //http://www.omdbapi.com/?i=tt3896198&apikey=ff07d96f
+      //http://www.omdbapi.com/?i=${encodeURI(title)}&type=${type}&apikey=ff07d96f
+      // return this.http.get(`http://www.omdbapi.com/?i=${encodeURI(title)}&type=${type}&apikey=ff07d96f`)
+      return this.http.get(`http://www.omdbapi.com/?s=${ encodeURI(title) }&plot=full&apikey=ff07d96f`)
       .pipe(
-        map(results => results['Search']) // show only the results containing the 'Search' field
-      );
+        // show only the results containing the 'Search' field
+        map(results => {
+          console.log('RAW: ', results);
+          return results['Search'];
+        }));
     }
 
     getDetails(id) {
