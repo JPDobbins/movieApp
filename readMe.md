@@ -4,6 +4,8 @@
     - src
         - app: store majority of functionality here
             - home: standard home folder for home screen (deleted for this example)
+            - pages: files pertaining to a given page, it's styling, routing declarations, test, and back end functionality 
+            - services: files similar to controllers, defines alot of back end functionality 
         - assets: store images etc
         - environments: define dev ops environments e.g. production and development 
         - theme: css et. al 
